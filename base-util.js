@@ -8,7 +8,7 @@ var BaseUtil = function(){
 	/*
 		URL manipulates
 	*/
-	function URL(block_id){
+	function URL(){
 		this.url_params = [];
 	}
 
@@ -29,11 +29,23 @@ var BaseUtil = function(){
 	}
 
 
+	/*
+		Object literals/Arrays
+	*/
+	function _findByKey(arr, key){
+		var results = arr.filter(function(e){
+		    return e.key == key;
+		});
+		return (results.length) ? results[0]:undefined;
+	}
+
+
 
 
 	//public functions
 	return {
-		url : URL
+		url : URL,
+		findByKey : _findByKey
 	};
 
 }({});
